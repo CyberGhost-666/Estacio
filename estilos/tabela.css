@@ -1,0 +1,59 @@
+.area-usuarios {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--color-blue-1);
+}
+
+.btn-cdt {
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--color-red-1);
+    color: var(--color-neutro-1);
+    transition: background-color 0.3s;
+}
+
+.btn-cdt:hover {
+    background-color: var(--color-red-2);
+}
+
+.tabela-usuarios {
+    border-collapse: collapse;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-neutro-1);
+}
+
+.tabela-itens th, .tabela-itens td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid var(--color-neutro-2);
+}
+
+.btn-acoes button{
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.btn-edit {
+    background-color: var(--color-yellow-1);
+}
+
+.btn-delete {
+    background-color: var(--color-red-3);
+    color: var(--color-neutro-1);
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.7;
+}
