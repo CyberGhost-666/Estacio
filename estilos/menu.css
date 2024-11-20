@@ -1,0 +1,21 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    background-color: var(--color-neutro-1);
+    color: var(--color-neutro-2);
+    box-shadow: 0px 0.1875rem 0.1875rem var(--color-sombra-1);
+}
+
+.menu-itens a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+    color: var(--color-neutro-2);
+}
+
+.menu-itens a:hover {
+    text-decoration: underline 2px;
+}
