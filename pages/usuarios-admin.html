@@ -6,8 +6,7 @@
     <link rel="shortcut icon" href="../img/estacio-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../estilos/style.css">
     <link rel="stylesheet" href="../estilos/menu.css">
-    <link rel="stylesheet" href="../estilos/cards.css">
-    <title>Centro Universitário Estácio de Sá - Admin</title>
+    <title>Centro Universitário Estácio de Sá - Usuários</title>
 </head>
 <body>
     <header class="menu">
@@ -27,21 +26,29 @@
         </div>
     </header>
 
-    <main class="area-cards">
-        <div class="card">
-            <h1>Análise e Desenvolvimento de Sistemas</h1>
-            <div class="line"></div>
-            <div class="info-card">
-                <div class="esquerda">
-                    <h2>Engenharia de Software</h2>
-                    <p>Professor(a) Enilda Caceres</p>
-                    <p>ARA0097</p>
-                </div>
-                <div class="direita">
-                    <p>Lab 7</p>
-                </div>
-            </div>
-        </div>
+    <main class="area-usuarios">
+        <button type="button" class="btn-cdt">Cadastrar Usuário</button>
+        <table class="tabela-usuarios">
+            <thead>
+                <tr class="tabela-itens">
+                    <th>Nome</th>
+                    <th>Usuário</th>
+                    <th>Tipo de Usuário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tabela-itens">
+                    <td>Fred Lopes</td>
+                    <td>Fred</td>
+                    <td>Admin</td>
+                    <td class="btn-acoes">
+                        <button type="button" class="btn-edit">Editar</button>
+                        <button type="button" class="btn-delete">Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 </html>
