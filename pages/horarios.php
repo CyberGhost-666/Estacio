@@ -68,7 +68,7 @@
                             <td><?= ucfirst(htmlspecialchars($horario['dia_semana'])); ?></td>
                             <td><?= ucfirst(htmlspecialchars($horario['turno'])); ?></td>
                             <td class="btn-acoes">
-                                <button type="button" class="btn-edit">Editar</button>
+                                <a href="editar-horario.php?id=<?= $horario['id_horario']; ?>" class="btn-edit">Editar</a>
 
                                 <form action="../php/deletar-horario.php" method="post">
                                     <input type="hidden" name="id_horario" value="<?= $horario['id_horario']; ?>">
