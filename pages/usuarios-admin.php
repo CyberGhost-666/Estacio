@@ -31,9 +31,9 @@
 
         <nav class="menu-itens">
             <a href="../pages/index-admin.html">Home</a>
-            <a href="../pages/usuarios-admin.html">Usuários</a>
+            <a href="../pages/usuarios-admin.php">Usuários</a>
             <a href="#">Pedidos</a>
-            <a href="#">Horários</a>
+            <a href="../pages/horarios.html">Horários</a>
         </nav>
 
         <div class="usuario-logado">
@@ -41,9 +41,9 @@
         </div>
     </header>
 
-    <main class="area-usuarios">
+    <main class="area-tabela">
         <a href="../pages/cadastrar-usuario-admin.html" class="btn-cdt">Cadastrar Usuário</a>
-        <table class="tabela-usuarios">
+        <table class="tabela">
             <thead>
                 <tr class="tabela-itens">
                     <th>Nome</th>
