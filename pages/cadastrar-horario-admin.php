@@ -29,7 +29,7 @@
             <img src="https://cdn.portal.estacio.br/logotipo_marca_estacio_preto_HOME_d4bc9da518_ed6850a937.svg" alt="Logo da Estácio">
         </div>
 
-        <form action="" method="post">
+        <form action="../php/cadastro-horario.php" method="post">
             <div class="form-group">
                 <label for="curso">Curso</label>
                 <div class="input-wrapper">
