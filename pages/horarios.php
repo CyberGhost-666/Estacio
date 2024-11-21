@@ -69,7 +69,11 @@
                             <td><?= ucfirst(htmlspecialchars($horario['turno'])); ?></td>
                             <td class="btn-acoes">
                                 <button type="button" class="btn-edit">Editar</button>
-                                <button type="button" class="btn-delete">Deletar</button>
+
+                                <form action="../php/deletar-horario.php" method="post">
+                                    <input type="hidden" name="id_horario" value="<?= $horario['id_horario']; ?>">
+                                    <button type="submit" class="btn-delete">Deletar</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

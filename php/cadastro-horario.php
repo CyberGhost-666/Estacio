@@ -40,7 +40,7 @@
         $stmt->bindParam(':iu', $id_usuario);
 
         if ($stmt->execute()) {
-            header('Location: ../pages/horarios.html');
+            header('Location: ../pages/horarios.php');
             exit;
         }
         else {
