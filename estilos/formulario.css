@@ -30,7 +30,6 @@ label {
 
 .input-wrapper {
     position: relative;
-    display: inline-block;
 }
 
 input, select {
@@ -44,7 +43,7 @@ input, select {
     text-decoration: none;
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 20px;
     font-size: 20px;
     transform: translateY(-50%);
     color: var(--color-green-1);

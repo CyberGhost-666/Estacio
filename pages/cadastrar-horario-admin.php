@@ -94,7 +94,7 @@
             </div>
 
             <div class="acoes-form">
-                <a href="../pages/horarios.html" class="btn-cancelar">Voltar</a>
+                <a href="../pages/horarios.php" class="btn-cancelar">Voltar</a>
                 <button type="submit" class="btn-cadastrar">Cadastrar</button>
             </div>
         </form>
