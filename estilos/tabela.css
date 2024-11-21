@@ -35,22 +35,31 @@
 
 .tabela-itens th, .tabela-itens td {
     text-align: left;
-    padding: 10px;
-    border: 1px solid var(--color-neutro-2);
+    padding: 15px;
 }
 
-.btn-acoes button{
+.btn-acoes {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+}
+
+.btn-acoes a, .btn-edit {
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: var(--color-yellow-1);
+    color: var(--color-neutro-2);
+}
+
+.btn-delete {
     border: none;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 4px;
-}
-
-.btn-edit {
-    background-color: var(--color-yellow-1);
-}
-
-.btn-delete {
     background-color: var(--color-red-3);
     color: var(--color-neutro-1);
 }
