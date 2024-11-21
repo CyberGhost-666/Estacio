@@ -39,7 +39,7 @@
                             <option value="<?= $curso['id_curso'] ?>"><?= htmlspecialchars($curso['nome']) ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <a href="#" class="icon"><i class="fas fa-plus"></i></a>
+                    <a href="../pages/cadastrar-curso.html" class="icon"><i class="fas fa-plus"></i></a>
                 </div>
             </div>
             <div class="form-group">
