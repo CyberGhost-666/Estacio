@@ -28,11 +28,30 @@ label {
     color: var(--color-neutro-1);
 }
 
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 input, select {
     border: none;
     padding: 10px;
     border-radius: 4px;
     width: 100%;
+}
+
+.icon {
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    font-size: 20px;
+    transform: translateY(-50%);
+    color: var(--color-green-1);
+}
+
+.icon:hover {
+    opacity: 0.7;
 }
 
 .acoes-form {
