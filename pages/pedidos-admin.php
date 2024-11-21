@@ -74,12 +74,12 @@
                         </div>
                     </div>
                     <div class="acoes-card">
-                        <form action="../php/processar-pedido.php" method="post" style="display: inline;">
+                        <form action="../php/processar-pedido.php" method="post">
                             <input type="hidden" name="id_pedido" value="<?= $pedido['id_pedido_alteracao'] ?>">
                             <input type="hidden" name="acao" value="rejeitar">
                             <button type="submit" class="btn-rejeitar">Rejeitar</button>
                         </form>
-                        <form action="../php/processar-pedido.php" method="post" style="display: inline;">
+                        <form action="../php/processar-pedido.php" method="post">
                             <input type="hidden" name="id_pedido" value="<?= $pedido['id_pedido_alteracao'] ?>">
                             <input type="hidden" name="acao" value="aceitar">
                             <button type="submit" class="btn-aceitar">Aceitar</button>
