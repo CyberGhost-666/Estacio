@@ -1,5 +1,12 @@
 <?php
+    session_start();
+
     include '../php/config.php';
+
+    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
+        header("Location: ../pages/login.html");
+        exit;
+    }
 
     try {
         $cursos = $pdo->query("SELECT id_curso, nome FROM curso ORDER BY nome")->fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +46,7 @@
                             <option value="<?= $curso['id_curso'] ?>"><?= htmlspecialchars($curso['nome']) ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <a href="../pages/cadastrar-curso.html" class="icon"><i class="fas fa-plus"></i></a>
+                    <a href="../pages/cadastrar-curso.php" class="icon"><i class="fas fa-plus"></i></a>
                 </div>
             </div>
             <div class="form-group">
@@ -63,7 +70,7 @@
                             <option value="<?= $professor['id_usuario'] ?>"><?= htmlspecialchars($professor['nome']) ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <a href="../pages/cadastrar-usuario-admin.html" class="icon"><i class="fas fa-plus"></i></a>
+                    <a href="../pages/cadastrar-usuario-admin.php" class="icon"><i class="fas fa-plus"></i></a>
                 </div>
             </div>
             <div class="form-group">

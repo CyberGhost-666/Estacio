@@ -15,13 +15,13 @@
                 $stmt = $pdo->prepare("DELETE FROM pedido_alteracao WHERE id_pedido_alteracao = :id_pedido");
                 $stmt->bindParam(':id_pedido', $id_pedido, PDO::PARAM_INT);
                 $stmt->execute();
-                echo "Pedido aceito!";
+                echo "<script>alert('Pedido aceito!'); window.location.href = '../pages/pedidos-admin.php';</script>";
             }
             elseif ($acao === 'rejeitar') {
                 $stmt = $pdo->prepare("DELETE FROM pedido_alteracao WHERE id_pedido_alteracao = :id_pedido");
                 $stmt->bindParam(':id_pedido', $id_pedido, PDO::PARAM_INT);
                 $stmt->execute();
-                echo "Pedido rejeitado!";
+                echo "<script>alert('Pedido rejeitado!'); window.location.href = '../pages/pedidos-admin.php';</script>";
             }
         }
         catch (PDOException $e) {

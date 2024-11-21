@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="../img/estacio-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../estilos/style.css">
     <link rel="stylesheet" href="../estilos/formulario.css">
-    <title>Centro Universitário Estácio de Sá - Cadastro Curso</title>
+    <title>Centro Universitário Estácio de Sá - Login</title>
 </head>
 <body>
     <div class="area-formulario">
@@ -14,15 +14,19 @@
             <img src="https://cdn.portal.estacio.br/logotipo_marca_estacio_preto_HOME_d4bc9da518_ed6850a937.svg" alt="Logo da Estácio">
         </div>
 
-        <form action="../php/cadastro-curso.php" method="post">
+        <form method="post" action="../php/login.php">
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite o nome..." required>
+                <label for="usuario">Usuário</label>
+                <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário..." required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha..." required>
             </div>
 
             <div class="acoes-form">
-                <a href="../pages/cadastrar-horario-admin.php" class="btn-cancelar">Voltar</a>
-                <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                <a href="../index.php" class="btn-cancelar">Voltar</a>
+                <button type="submit" class="btn-cadastrar">Login</button>
             </div>
         </form>
     </div>

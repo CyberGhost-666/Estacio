@@ -1,5 +1,14 @@
 <?php
+    session_start();
+    
     require_once '../php/config.php';
+
+    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
+        header("Location: ../pages/login.html");
+        exit;
+    }
+
+    $nomeUsuario = $_SESSION['nome'];
 
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id_horario = intval($_GET['id']);

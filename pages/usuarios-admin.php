@@ -1,5 +1,14 @@
 <?php
+    session_start();
+
     require_once '../php/config.php';
+
+    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
+        header("Location: ../pages/login.html");
+        exit;
+    }
+
+    $nomeUsuario = $_SESSION['nome'];
 
     try {
         $sql = "SELECT nome, usuario, tipo_usuario FROM usuario";
@@ -21,6 +30,7 @@
     <link rel="stylesheet" href="../estilos/style.css">
     <link rel="stylesheet" href="../estilos/menu.css">
     <link rel="stylesheet" href="../estilos/tabela.css">
+    <script src="../scripts/script.js" defer></script>
     <title>Centro Universitário Estácio de Sá - Usuários</title>
 </head>
 <body>
@@ -30,19 +40,28 @@
         </div>
 
         <nav class="menu-itens">
-            <a href="../pages/index-admin.html">Home</a>
+            <a href="../pages/index-admin.php">Home</a>
             <a href="../pages/usuarios-admin.php">Usuários</a>
-            <a href="#">Pedidos</a>
+            <a href="../pages/pedidos-admin.php">Pedidos</a>
             <a href="../pages/horarios.php">Horários</a>
         </nav>
 
         <div class="usuario-logado">
-            <span>Bem-Vindo(a), <strong>Fred Lopes</strong></span>
+            <span>
+                Bem-Vindo(a), 
+                <strong>
+                    <a href="#" id="nome-usuario" onclick="toggleMenu()"><?= htmlspecialchars($nomeUsuario) ?></a>
+                </strong>
+            </span>
+
+            <div id="menu-deslogar" class="menu-deslogar">
+                <a href="../php/logout.php">Deslogar</a>
+            </div>
         </div>
     </header>
 
     <main class="area-tabela">
-        <a href="../pages/cadastrar-usuario-admin.html" class="btn-cdt">Cadastrar Usuário</a>
+        <a href="../pages/cadastrar-usuario-admin.php" class="btn-cdt">Cadastrar Usuário</a>
         <table class="tabela">
             <thead>
                 <tr class="tabela-itens">
@@ -62,10 +81,11 @@
                             <td class="btn-acoes">
                                 <button type="button" class="btn-edit" onclick="window.location.href='../pages/editar-usuario.php?usuario=<?= urldecode($usuario['usuario']); ?>'">Editar</button>
 
-                                <form action="../php/deletar-usuario.php" method="post">
+                                <form action="../php/deletar-usuario.php" method="post" onsubmit="return confirmarDelecao('<?= htmlspecialchars($usuario['usuario']); ?>')">
                                     <input type="hidden" name="usuario" value="<?= htmlspecialchars($usuario['usuario']); ?>">
                                     <button type="submit" class="btn-delete">Deletar</button>
                                 </form>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

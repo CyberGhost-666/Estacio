@@ -9,12 +9,12 @@
         $tipoUsuario = $_POST['tipoUsuario'];
 
         if ($senha !== $confSenha) {
-            echo "As Senhas Não Coincidem!";
+            echo "<script>alert('As Senhas Não Coincidem!'); window.location.href = '../pages/cadastrar-usuario-admin.php';</script>";
             exit;
         }
 
         if (empty($usuario)) {
-            echo 'O Campo "Usuário" é Obrigatório!';
+            echo "<script>alert('O Campo 'Usuário' é Obrigatório!'); window.location.href = '../pages/cadastrar-usuario-admin.php';</script>";
             exit;
         }
 
@@ -23,7 +23,7 @@
         $stmtCheck->bindParam(':u', $usuario);
         $stmtCheck->execute();
         if ($stmtCheck->rowCount() > 0) {
-            echo "Este Usuário Já Está Cadastrado!";
+            echo "<script>alert('Este Usuário Já Está Cadastrado!'); window.location.href = '../pages/cadastrar-usuario-admin.php';</script>";
             exit;
         }
 
@@ -38,11 +38,11 @@
         $stmt->bindParam(':tu', $tipoUsuario);
 
         if ($stmt->execute()) {
-            echo "Cadastro Realizado Com Sucesso!";
+            echo "<script>alert('Cadastro Realizado Com Sucesso!'); window.location.href = '../pages/usuarios-admin.php';</script>";
             exit;
         }
         else {
-            echo "Erro ao Cadastrar Usuário";
+            echo "<script>alert('Erro ao Cadastrar Usuário'); window.location.href = '../pages/usuarios-admin.php';</script>";
         }
     }
 ?>

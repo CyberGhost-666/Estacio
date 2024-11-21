@@ -1,14 +1,5 @@
 <?php
-    session_start();
-
-    include '../php/config.php';
-
-    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
-        header("Location: ../pages/login.html");
-        exit;
-    }
-    
-    $nomeUsuario = $_SESSION['nome'];
+    include 'php/config.php';
 
     try {
         $stmt = $pdo->query("
@@ -39,12 +30,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/estacio-favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../estilos/style.css">
-    <link rel="stylesheet" href="../estilos/menu.css">
-    <link rel="stylesheet" href="../estilos/cards.css">
-    <script src="../scripts/script.js" defer></script>
-    <title>Centro Universitário Estácio de Sá - Admin</title>
+    <link rel="shortcut icon" href="img/estacio-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/menu.css">
+    <link rel="stylesheet" href="estilos/cards.css">
+    <title>Centro Universitário Estácio de Sá</title>
 </head>
 <body>
     <header class="menu">
@@ -53,23 +43,11 @@
         </div>
 
         <nav class="menu-itens">
-            <a href="../pages/index-admin.php">Home</a>
-            <a href="../pages/usuarios-admin.php">Usuários</a>
-            <a href="../pages/pedidos-admin.php">Pedidos</a>
-            <a href="../pages/horarios.php">Horários</a>
+            <a href="pages/login.html">Login</a>
         </nav>
 
         <div class="usuario-logado">
-            <span>
-                Bem-Vindo(a), 
-                <strong>
-                    <a href="#" id="nome-usuario" onclick="toggleMenu()"><?= htmlspecialchars($nomeUsuario) ?></a>
-                </strong>
-            </span>
-
-            <div id="menu-deslogar" class="menu-deslogar">
-                <a href="../php/logout.php">Deslogar</a>
-            </div>
+            <span>Bem-Vindo(a)</span>
         </div>
     </header>
 

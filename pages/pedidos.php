@@ -1,5 +1,12 @@
 <?php
+    session_start();
+    
     include '../php/config.php';
+
+    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'professor') {
+        header("Location: ../pages/login.html");
+        exit;
+    }
 
     try {
         $cursos = $pdo->query("SELECT id_curso, nome FROM curso ORDER BY nome")->fetchAll(PDO::FETCH_ASSOC);
@@ -101,7 +108,7 @@
             </div>
         
             <div class="acoes-form">
-                <a href="../pages/index-professor.html" class="btn-cancelar">Voltar</a>
+                <a href="../pages/index-professor.php" class="btn-cancelar">Voltar</a>
                 <button type="submit" class="btn-cadastrar">Solicitar</button>
             </div>
         </form>

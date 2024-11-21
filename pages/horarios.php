@@ -1,5 +1,14 @@
 <?php
+    session_start();
+    
     require_once '../php/config.php';
+
+    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
+        header("Location: ../pages/login.html");
+        exit;
+    }
+
+    $nomeUsuario = $_SESSION['nome'];
 
     try {
         $sql = "SELECT h.id_horario, h.ara, h.sala, h.turno, h.dia_semana, c.nome AS curso, m.nome AS materia, u.nome AS professor FROM horario h INNER JOIN curso c ON h.id_curso = c.id_curso INNER JOIN materia m ON h.id_materia = m.id_materia INNER JOIN usuario u ON h.id_usuario = u.id_usuario";
@@ -21,6 +30,7 @@
     <link rel="stylesheet" href="../estilos/style.css">
     <link rel="stylesheet" href="../estilos/menu.css">
     <link rel="stylesheet" href="../estilos/tabela.css">
+    <script src="../scripts/script.js" defer></script>
     <title>Centro Universitário Estácio de Sá - Horários</title>
 </head>
 <body>
@@ -30,14 +40,23 @@
         </div>
 
         <nav class="menu-itens">
-            <a href="../pages/index-admin.html">Home</a>
+            <a href="../pages/index-admin.php">Home</a>
             <a href="../pages/usuarios-admin.php">Usuários</a>
-            <a href="#">Pedidos</a>
+            <a href="../pages/pedidos-admin.php">Pedidos</a>
             <a href="../pages/horarios.php">Horários</a>
         </nav>
 
         <div class="usuario-logado">
-            <span>Bem-Vindo(a), <strong>Fred Lopes</strong></span>
+            <span>
+                Bem-Vindo(a), 
+                <strong>
+                    <a href="#" id="nome-usuario" onclick="toggleMenu()"><?= htmlspecialchars($nomeUsuario) ?></a>
+                </strong>
+            </span>
+
+            <div id="menu-deslogar" class="menu-deslogar">
+                <a href="../php/logout.php">Deslogar</a>
+            </div>
         </div>
     </header>
 
@@ -70,10 +89,11 @@
                             <td class="btn-acoes">
                                 <a href="editar-horario.php?id=<?= $horario['id_horario']; ?>" class="btn-edit">Editar</a>
 
-                                <form action="../php/deletar-horario.php" method="post">
+                                <form action="../php/deletar-horario.php" method="post" onsubmit="return confirmarDelecaoHorario(<?= $horario['id_horario']; ?>)">
                                     <input type="hidden" name="id_horario" value="<?= $horario['id_horario']; ?>">
                                     <button type="submit" class="btn-delete">Deletar</button>
                                 </form>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

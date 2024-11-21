@@ -31,7 +31,7 @@
 
             $stmt->execute();
 
-            header("Location: ../pages/index-professor.html?success=1");
+            header("Location: ../pages/index-professor.php?success=1");
             exit;
         } catch (PDOException $e) {
             echo "Erro ao inserir pedido de alteração: " . $e->getMessage();

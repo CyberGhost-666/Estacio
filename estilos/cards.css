@@ -44,3 +44,31 @@
     font-size: 18px;
     border: 2px solid var(--color-neutro-2);
 }
+
+.acoes-card{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.btn-aceitar, .btn-rejeitar{
+    cursor: pointer;
+    background-color: var(--color-red-3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    color: var(--color-neutro-1);
+    font-size: 16px;
+}
+
+.btn-aceitar{
+    background-color: var(--color-green-1);
+}
+
+.btn-aceitar:hover, .btn-rejeitar:hover{
+    opacity: 0.7;
+}

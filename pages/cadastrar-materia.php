@@ -1,5 +1,12 @@
 <?php
+    session_start();
+    
     include '../php/config.php';
+
+    if (!isset($_SESSION['id_usuario']) || $_SESSION['tipo_usuario'] !== 'admin') {
+        header("Location: ../pages/login.html");
+        exit;
+    }
 
     try {
         $cursos = $pdo->query("SELECT id_curso, nome FROM curso ORDER BY nome")->fetchAll(PDO::FETCH_ASSOC);
