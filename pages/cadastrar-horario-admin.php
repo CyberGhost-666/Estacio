@@ -51,7 +51,7 @@
                             <option value="<?= $materia['id_materia'] ?>"><?= htmlspecialchars($materia['nome']) ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <a href="#" class="icon"><i class="fas fa-plus"></i></a>
+                    <a href="../pages/cadastrar-materia.php" class="icon"><i class="fas fa-plus"></i></a>
                 </div>
             </div>
             <div class="form-group">
@@ -63,7 +63,7 @@
                             <option value="<?= $professor['id_usuario'] ?>"><?= htmlspecialchars($professor['nome']) ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <a href="#" class="icon"><i class="fas fa-plus"></i></a>
+                    <a href="../pages/cadastrar-usuario-admin.html" class="icon"><i class="fas fa-plus"></i></a>
                 </div>
             </div>
             <div class="form-group">
